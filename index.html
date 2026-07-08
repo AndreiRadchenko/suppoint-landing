@@ -9,7 +9,7 @@
     class="bg-background text-on-background font-body-md overflow-x-hidden selection:bg-sunny-accent selection:text-white"
   >
     <!-- ── Decorative background glows ──────────────────────────────────── -->
-    <div class="fixed inset-0 pointer-events-none -z-10">
+    <!-- <div class="fixed inset-0 pointer-events-none -z-10">
       <div class="glow-cyan blur-[120px] absolute top-[10%] left-[5%] w-[500px] h-[500px]"></div>
       <div
         class="glow-teal blur-[150px] absolute bottom-[20%] right-[10%] w-[600px] h-[600px]"
@@ -17,7 +17,7 @@
       <div
         class="glow-cyan blur-[100px] opacity-40 absolute top-[40%] right-[5%] w-[400px] h-[400px]"
       ></div>
-    </div>
+    </div> -->
 
     {{> nav}}
 
@@ -249,6 +249,7 @@
                     web-share;
                   "
                   allowfullscreen
+                  sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
                   class="w-full h-full rounded-[2.5rem]"
                   frameborder="0"
                 ></iframe>
