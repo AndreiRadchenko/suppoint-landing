@@ -157,3 +157,21 @@
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
+
+/* ─── Language Switcher ─────────────────────────────────────────────────── */
+#lang-ua,
+#lang-en,
+#lang-ua-mobile,
+#lang-en-mobile {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+#lang-ua.active,
+#lang-en.active,
+#lang-ua-mobile.active,
+#lang-en-mobile.active {
+  background-color: rgba(0, 106, 98, 0.3) !important;
+  color: #006a62 !important;
+  font-weight: 700;
+}

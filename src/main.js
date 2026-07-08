@@ -1,7 +1,25 @@
 import './style.css'
 import { initNavbar } from './components/navbar.js'
+import { initI18n, setLanguage, getCurrentLanguage } from './i18n.js'
+import { initWeatherWidget } from './components/weatherWidget.js'
 
+// Initialize i18n
+initI18n()
 initNavbar()
+
+// Initialize weather widget safely (handles both early and late script execution)
+function safeInitWeather() {
+  try {
+    initWeatherWidget()
+  } catch (e) {
+    console.error('Weather widget init failed:', e)
+  }
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', safeInitWeather)
+} else {
+  safeInitWeather()
+}
 
 // ── Slider helpers ────────────────────────────────────────────────────────
 export function scrollSlider(id, direction) {
@@ -46,3 +64,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // expose for inline onclick attributes
 window.scrollSlider = scrollSlider
+
+// Language switcher
+document.addEventListener('DOMContentLoaded', () => {
+  const langUaBtn = document.getElementById('lang-ua')
+  const langEnBtn = document.getElementById('lang-en')
+  const langUaMobileBtn = document.getElementById('lang-ua-mobile')
+  const langEnMobileBtn = document.getElementById('lang-en-mobile')
+
+  const allLangBtns = [langUaBtn, langEnBtn, langUaMobileBtn, langEnMobileBtn].filter(Boolean)
+
+  allLangBtns.forEach((btn) => {
+    if (btn.id.includes('ua')) {
+      btn.addEventListener('click', () => setLanguage('uk'))
+    } else if (btn.id.includes('en')) {
+      btn.addEventListener('click', () => setLanguage('en'))
+    }
+  })
+
+  // Update active state on language change
+  window.addEventListener('languageChanged', (e) => {
+    allLangBtns.forEach((btn) => {
+      if (btn.id.includes('ua')) {
+        btn.classList.toggle('active', e.detail.lang === 'uk')
+      } else if (btn.id.includes('en')) {
+        btn.classList.toggle('active', e.detail.lang === 'en')
+      }
+    })
+  })
+
+  // Set initial active state
+  allLangBtns.forEach((btn) => {
+    if (btn.id.includes('ua')) {
+      btn.classList.toggle('active', getCurrentLanguage() === 'uk')
+    } else if (btn.id.includes('en')) {
+      btn.classList.toggle('active', getCurrentLanguage() === 'en')
+    }
+  })
+})
+

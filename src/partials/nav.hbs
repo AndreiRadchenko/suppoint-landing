@@ -12,19 +12,30 @@
 
   <!-- Desktop section links -->
   <div class="hidden md:flex items-center gap-8">
-    <a href="#how-it-works" class="font-label-bold text-label-bold text-on-surface-variant hover:text-secondary transition-colors">Як це працює</a>
-    <a href="#pricing"      class="font-label-bold text-label-bold text-on-surface-variant hover:text-secondary transition-colors">Ціни</a>
-    <a href="#locations"    class="font-label-bold text-label-bold text-on-surface-variant hover:text-secondary transition-colors">Локації</a>
+    <a href="#how-it-works" class="font-label-bold text-label-bold text-on-surface-variant hover:text-secondary transition-colors" data-i18n="howItWorks">Як це працює</a>
+    <a href="#pricing"      class="font-label-bold text-label-bold text-on-surface-variant hover:text-secondary transition-colors" data-i18n="pricing">Ціни</a>
+    <a href="#locations"    class="font-label-bold text-label-bold text-on-surface-variant hover:text-secondary transition-colors" data-i18n="locations">Локації</a>
   </div>
 
-  <!-- Phone + hamburger -->
+  <!-- Phone + Language switcher + hamburger -->
   <div class="flex items-center gap-3">
     <a href="tel:+380987868484"
        class="hidden sm:flex items-center gap-2 font-label-bold text-label-bold text-primary
               bg-white/40 py-2 px-4 rounded-full border border-white/60 hover:bg-white/70 transition-colors">
       <span class="material-symbols-outlined" style="font-size:18px">call</span>
-      <span class="hidden lg:inline">+380 98 786 84 84</span>
+      <span class="hidden lg:inline" data-i18n="phone">+380 98 786 84 84</span>
     </a>
+    
+    <!-- Language selector -->
+    <div class="hidden sm:flex items-center gap-1 bg-white/20 py-1 px-2 rounded-full border border-white/30">
+      <button id="lang-ua" 
+              class="px-3 py-1.5 rounded-full font-label-bold text-sm transition-all hover:bg-white/30"
+              data-i18n="languageUA">UA</button>
+      <button id="lang-en" 
+              class="px-3 py-1.5 rounded-full font-label-bold text-sm transition-all hover:bg-white/30"
+              data-i18n="languageEN">EN</button>
+    </div>
+
     <button id="menu-toggle" aria-label="Toggle menu" aria-expanded="false"
             class="md:hidden flex flex-col gap-1 p-2">
       <span class="block w-5 h-0.5 bg-primary rounded transition-all"></span>
@@ -39,12 +50,22 @@
      class="hidden fixed z-40 md:hidden liquid-glass rounded-3xl p-6"
      style="top:72px; left:16px; right:16px">
   <div class="flex flex-col gap-1">
-    <a href="#how-it-works" class="block py-3 font-label-bold text-on-surface-variant hover:text-secondary transition-colors border-b border-primary/5">Як це працює</a>
-    <a href="#pricing"      class="block py-3 font-label-bold text-on-surface-variant hover:text-secondary transition-colors border-b border-primary/5">Ціни</a>
-    <a href="#locations"    class="block py-3 font-label-bold text-on-surface-variant hover:text-secondary transition-colors border-b border-primary/5">Локації</a>
+    <a href="#how-it-works" class="block py-3 font-label-bold text-on-surface-variant hover:text-secondary transition-colors border-b border-primary/5" data-i18n="howItWorks">Як це працює</a>
+    <a href="#pricing"      class="block py-3 font-label-bold text-on-surface-variant hover:text-secondary transition-colors border-b border-primary/5" data-i18n="pricing">Ціни</a>
+    <a href="#locations"    class="block py-3 font-label-bold text-on-surface-variant hover:text-secondary transition-colors border-b border-primary/5" data-i18n="locations">Локації</a>
     <a href="tel:+380987868484" class="flex items-center gap-2 py-3 font-label-bold text-primary">
       <span class="material-symbols-outlined" style="font-size:18px">call</span>
-      +380 98 786 84 84
+      <span data-i18n="phone">+380 98 786 84 84</span>
     </a>
+    
+    <!-- Mobile language selector -->
+    <div class="flex items-center gap-2 pt-3 mt-3 border-t border-primary/5">
+      <button id="lang-ua-mobile" 
+              class="flex-1 px-3 py-2 rounded-full font-label-bold text-sm transition-all hover:bg-white/20 active:bg-secondary/40 close-menu"
+              data-i18n="languageUA">UA</button>
+      <button id="lang-en-mobile" 
+              class="flex-1 px-3 py-2 rounded-full font-label-bold text-sm transition-all hover:bg-white/20 active:bg-secondary/40 close-menu"
+              data-i18n="languageEN">EN</button>
+    </div>
   </div>
 </div>
