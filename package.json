@@ -4,8 +4,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
+    "prebuild": "node scripts/update-prices.js",
     "build": "vite build",
     "preview": "vite preview",
+    "update-prices": "node scripts/update-prices.js",
     "format": "prettier --write ."
   },
   "devDependencies": {

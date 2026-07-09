@@ -19,15 +19,15 @@
       href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200'
       rel='stylesheet'
     />    
-    <script type="module" crossorigin src="/suppoint-landing/assets/main-D0ZHMm_n.js"></script>
-    <link rel="stylesheet" crossorigin href="/suppoint-landing/assets/main-CRBSzle6.css">
+    <script type="module" crossorigin src="/suppoint-landing/assets/main-7gWkvJU3.js"></script>
+    <link rel="stylesheet" crossorigin href="/suppoint-landing/assets/main-BBgYtWTa.css">
   </head>
 
   <body
     class="bg-background text-on-background font-body-md overflow-x-hidden selection:bg-sunny-accent selection:text-white"
   >
     <!-- ── Decorative background glows ──────────────────────────────────── -->
-    <div class="fixed inset-0 pointer-events-none -z-10">
+    <!-- <div class="fixed inset-0 pointer-events-none -z-10">
       <div class="glow-cyan blur-[120px] absolute top-[10%] left-[5%] w-[500px] h-[500px]"></div>
       <div
         class="glow-teal blur-[150px] absolute bottom-[20%] right-[10%] w-[600px] h-[600px]"
@@ -35,7 +35,7 @@
       <div
         class="glow-cyan blur-[100px] opacity-40 absolute top-[40%] right-[5%] w-[400px] h-[400px]"
       ></div>
-    </div>
+    </div> -->
 
     <!-- Floating pill nav -->
     <nav id="main-nav"
@@ -304,24 +304,27 @@
             </div>
 
             <div class="pt-4">
-              <div class="liquid-glass inline-flex items-center gap-6 p-5 rounded-3xl">
-                <span class="text-secondary font-headline-lg text-4xl" data-i18n="priceFrom"
-                  >від 250₴</span
-                >
+              <a
+                href="https://t.me/SUPPOINT_RentalBot"
+                target="_blank"
+                rel="noopener"
+                class="sunny-btn inline-flex items-center gap-6 p-5 rounded-3xl"
+              >
+                <span class="font-headline-lg text-4xl pl-6" data-i18n="priceFrom">від 250₴</span>
                 <span
-                  class="text-on-surface-variant text-sm uppercase tracking-widest border-l border-primary/10 pl-6"
+                  class="text-sm uppercase tracking-widest border-l border-on-primary/60 pl-6"
                   data-i18n="perHour"
                   >за годину<br />драйву</span
                 >
-              </div>
+              </a>
             </div>
           </div>
 
           <!-- Phone mockup with video -->
-          <div class="flex justify-center relative">
+          <div class="flex justify-center lg:justify-end relative">
             <div class="absolute -inset-10 bg-secondary/5 blur-[100px] rounded-full"></div>
             <div
-              class="liquid-glass p-3 rounded-[4rem] border-[10px] border-white/90 aspect-[9/19] max-w-[300px] w-full shadow-2xl overflow-hidden relative"
+              class="liquid-glass p-3 rounded-[4rem] border-[10px] border-white/90 aspect-[9/19] max-w-[350px] w-full shadow-2xl overflow-hidden relative"
             >
               <div class="bg-[#f0f4f8] w-full h-full rounded-[3rem] overflow-hidden">
                 <iframe
@@ -338,7 +341,7 @@
                   "
                   allowfullscreen
                   sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
-                  class="w-full h-full rounded-[2.5rem]"
+                  class="w-full h-full rounded-[2.5rem] scale-[1.03] origin-center translate-y-[1%]"
                   frameborder="0"
                 ></iframe>
               </div>
@@ -365,14 +368,22 @@
           </div>
           <div class="flex gap-4 shrink-0">
             <button
+              type="button"
+              data-slider-btn="equipment-slider"
+              data-dir="-1"
               onclick="scrollSlider('equipment-slider', -1)"
-              class="w-14 h-14 rounded-full liquid-glass flex items-center justify-center text-primary hover:text-secondary transition-all"
+              class="slider-btn w-14 h-14 rounded-full liquid-glass flex items-center justify-center text-primary hover:text-secondary"
+              aria-label="Previous equipment slide"
             >
               <span class="material-symbols-outlined text-2xl">chevron_left</span>
             </button>
             <button
+              type="button"
+              data-slider-btn="equipment-slider"
+              data-dir="1"
               onclick="scrollSlider('equipment-slider', 1)"
-              class="w-14 h-14 rounded-full liquid-glass flex items-center justify-center text-primary hover:text-secondary transition-all"
+              class="slider-btn w-14 h-14 rounded-full liquid-glass flex items-center justify-center text-primary hover:text-secondary"
+              aria-label="Next equipment slide"
             >
               <span class="material-symbols-outlined text-2xl">chevron_right</span>
             </button>
@@ -381,57 +392,61 @@
 
         <div
           id="equipment-slider"
-          class="slider-container flex gap-gutter overflow-x-auto pb-8 cursor-grab active:cursor-grabbing"
+          class="slider-container flex overflow-x-auto pb-8 cursor-grab active:cursor-grabbing"
         >
           <!-- Slide 1: Full kit -->
-          <div class="slider-item min-w-full lg:min-w-[85%] shrink-0">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div class="slider-item">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
               <div class="liquid-glass rounded-[3rem] overflow-hidden p-3">
                 <img
                   alt="SUP board standard kit"
-                  class="w-full h-80 md:h-[500px] object-cover rounded-[2.5rem]"
+                  class="w-full h-72 md:h-[420px] object-cover rounded-[2.5rem]"
                   src="/suppoint-landing/assets/equipment-standard-BC8nkYTg.jpg"
                 />
               </div>
-              <div class="space-y-8 lg:pl-8">
-                <h3 class="font-headline-lg text-3xl text-primary" data-i18n="fullKit"
+              <div class="space-y-6 lg:pl-4 max-w-[100%]">
+                <h3 class="font-headline-lg text-2xl text-primary" data-i18n="fullKit"
                   >Повний комплект для плавання</h3
                 >
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div class="liquid-glass p-5 rounded-2xl flex items-start gap-4">
-                    <span class="material-symbols-outlined text-secondary text-3xl">surfing</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 min-w-full">
+                  <div class="liquid-glass p-4 rounded-2xl flex items-start gap-3 min-w-[100%]">
+                    <span class="material-symbols-outlined text-secondary text-2xl">surfing</span>
                     <div
-                      ><h4 class="font-label-bold text-primary mb-1" data-i18n="board">Сапборд</h4
-                      ><p class="text-sm text-on-surface-variant" data-i18n="boardDesc"
+                      ><h4 class="font-label-bold text-primary mb-1 text-sm" data-i18n="board"
+                        >Сапборд</h4
+                      ><p class="text-xs text-on-surface-variant" data-i18n="boardDesc"
                         >Стійка надувна дошка 10'6"</p
                       ></div
                     >
                   </div>
-                  <div class="liquid-glass p-5 rounded-2xl flex items-start gap-4">
-                    <span class="material-symbols-outlined text-secondary text-3xl">oar</span>
+                  <div class="liquid-glass p-4 rounded-2xl flex items-start gap-3">
+                    <span class="material-symbols-outlined text-secondary text-2xl">🛶</span>
                     <div
-                      ><h4 class="font-label-bold text-primary mb-1" data-i18n="paddle">Весло</h4
-                      ><p class="text-sm text-on-surface-variant" data-i18n="paddleDesc"
+                      ><h4 class="font-label-bold text-primary mb-1 text-sm" data-i18n="paddle"
+                        >Весло</h4
+                      ><p class="text-xs text-on-surface-variant" data-i18n="paddleDesc"
                         >Регульоване алюмінієве</p
                       ></div
                     >
                   </div>
-                  <div class="liquid-glass p-5 rounded-2xl flex items-start gap-4">
-                    <span class="material-symbols-outlined text-secondary text-3xl">anchor</span>
+                  <div class="liquid-glass p-4 rounded-2xl flex items-start gap-3">
+                    <span class="material-symbols-outlined text-secondary text-2xl">anchor</span>
                     <div
-                      ><h4 class="font-label-bold text-primary mb-1" data-i18n="leash">Ліш</h4
-                      ><p class="text-sm text-on-surface-variant" data-i18n="leashDesc"
+                      ><h4 class="font-label-bold text-primary mb-1 text-sm" data-i18n="leash"
+                        >Ліш</h4
+                      ><p class="text-xs text-on-surface-variant" data-i18n="leashDesc"
                         >Страхувальний шнур</p
                       ></div
                     >
                   </div>
-                  <div class="liquid-glass p-5 rounded-2xl flex items-start gap-4">
+                  <div class="liquid-glass p-4 rounded-2xl flex items-start gap-3">
                     <span class="material-symbols-outlined text-secondary text-3xl"
                       >health_and_safety</span
                     >
                     <div
-                      ><h4 class="font-label-bold text-primary mb-1" data-i18n="vest">Жилет</h4
-                      ><p class="text-sm text-on-surface-variant" data-i18n="vestDesc"
+                      ><h4 class="font-label-bold text-primary mb-1 text-sm" data-i18n="vest"
+                        >Жилет</h4
+                      ><p class="text-xs text-on-surface-variant" data-i18n="vestDesc"
                         >Сертифікований під розмір</p
                       ></div
                     >
@@ -442,47 +457,47 @@
           </div>
 
           <!-- Slide 2: Accessories -->
-          <div class="slider-item min-w-full lg:min-w-[85%] shrink-0">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div class="slider-item">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
               <div class="liquid-glass rounded-[3rem] overflow-hidden p-3 lg:order-2">
                 <img
                   alt="SUP accessories and locker"
-                  class="w-full h-80 md:h-[500px] object-cover rounded-[2.5rem]"
+                  class="w-full h-72 md:h-[420px] object-cover rounded-[2.5rem]"
                   src="/suppoint-landing/assets/equipment-accessories-BMA5T_Eo.jpg"
                 />
               </div>
-              <div class="space-y-6 lg:pr-8">
-                <h3 class="font-headline-lg text-3xl text-primary" data-i18n="importantAccessories"
+              <div class="space-y-4 lg:pr-4 max-w-[460px]">
+                <h3 class="font-headline-lg text-2xl text-primary" data-i18n="importantAccessories"
                   >Важливі аксесуари</h3
                 >
                 <div
-                  class="liquid-glass p-7 rounded-2xl flex items-center gap-5 border-l-4 border-secondary"
+                  class="liquid-glass p-5 rounded-2xl flex items-center gap-4 border-l-4 border-secondary"
                 >
-                  <span class="material-symbols-outlined text-secondary text-4xl shrink-0"
+                  <span class="material-symbols-outlined text-secondary text-3xl shrink-0"
                     >shopping_bag</span
                   >
                   <div>
-                    <h4 class="font-label-bold text-lg text-primary mb-1" data-i18n="dryBag"
+                    <h4 class="font-label-bold text-base text-primary mb-1" data-i18n="dryBag"
                       >Гермомішок</h4
                     >
                     <p
-                      class="text-on-surface-variant leading-relaxed text-sm"
+                      class="text-on-surface-variant leading-relaxed text-xs"
                       data-i18n="dryBagDesc"
                       >Водонепроникна сумка для телефону та цінних речей. Входить у вартість від 2-х
                       годин оренди.</p
                     >
                   </div>
                 </div>
-                <div class="liquid-glass p-7 rounded-2xl flex items-center gap-5">
-                  <span class="material-symbols-outlined text-secondary text-4xl shrink-0"
+                <div class="liquid-glass p-5 rounded-2xl flex items-center gap-4">
+                  <span class="material-symbols-outlined text-secondary text-3xl shrink-0"
                     >cases</span
                   >
                   <div>
-                    <h4 class="font-label-bold text-lg text-primary mb-1" data-i18n="lockers"
+                    <h4 class="font-label-bold text-base text-primary mb-1" data-i18n="lockers"
                       >Комірки для зберігання</h4
                     >
                     <p
-                      class="text-on-surface-variant leading-relaxed text-sm"
+                      class="text-on-surface-variant leading-relaxed text-xs"
                       data-i18n="lockersDesc"
                       >Безпечне місце для вашого одягу та взуття під час плавання.</p
                     >
@@ -523,7 +538,9 @@
               <h3 class="font-headline-lg text-3xl text-primary mb-6" data-i18n="oneHour"
                 >1 Година</h3
               >
-              <span class="text-6xl font-black text-primary mb-8">250₴</span>
+              <span class="text-6xl font-black text-primary mb-8" data-i18n="oneHourPrice"
+                >320₴</span
+              >
               <ul class="space-y-3 mb-10 text-on-surface-variant flex-grow text-sm">
                 <li class="flex items-center gap-2 justify-center"
                   ><span class="material-symbols-outlined text-secondary text-base"
@@ -564,7 +581,9 @@
               <h3 class="font-headline-lg text-4xl text-primary mb-6" data-i18n="twoHours"
                 >2 Години</h3
               >
-              <span class="text-7xl font-black text-primary mb-8">400₴</span>
+              <span class="text-7xl font-black text-primary mb-8" data-i18n="twoHoursPrice"
+                >570₴</span
+              >
               <ul class="space-y-3 mb-10 text-on-surface-variant flex-grow text-sm">
                 <li class="flex items-center gap-2 justify-center"
                   ><span class="material-symbols-outlined text-sunny-accent text-base"
@@ -601,7 +620,9 @@
               <h3 class="font-headline-lg text-3xl text-primary mb-6" data-i18n="allDay"
                 >Весь день</h3
               >
-              <span class="text-6xl font-black text-primary mb-8">900₴</span>
+              <span class="text-6xl font-black text-primary mb-8" data-i18n="allDayPrice"
+                >1 280₴</span
+              >
               <ul class="space-y-3 mb-10 text-on-surface-variant flex-grow text-sm">
                 <li class="flex items-center gap-2 justify-center"
                   ><span class="material-symbols-outlined text-secondary text-base"
@@ -627,52 +648,42 @@
             </div>
           </div>
 
-          <!-- Full price table -->
+          <!-- Full price table (filled from price.js) -->
           <div class="max-w-3xl mx-auto">
-            <h3 class="font-headline-lg text-2xl text-primary mb-8 text-center"
+            <h3
+              class="font-headline-lg text-2xl text-primary mb-8 text-center"
+              data-i18n="fullPriceTable"
               >Повна таблиця тарифів</h3
             >
             <div class="liquid-glass rounded-[2rem] overflow-hidden">
-              <table class="w-full text-left border-collapse">
-                <thead>
-                  <tr class="bg-white/30">
-                    <th
-                      class="p-6 text-secondary font-label-bold uppercase tracking-widest text-sm border-b border-primary/5"
-                      >Тривалість</th
+              <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                  <thead>
+                    <tr
+                      class="bg-secondary/15 border-b-2 border-secondary/25 shadow-[inset_0_-1px_0_rgba(0,106,98,0.12)]"
                     >
-                    <th
-                      class="p-6 text-secondary font-label-bold uppercase tracking-widest text-sm border-b border-primary/5"
-                      >Будні</th
-                    >
-                    <th
-                      class="p-6 text-secondary font-label-bold uppercase tracking-widest text-sm border-b border-primary/5"
-                      >Вихідні</th
-                    >
-                  </tr>
-                </thead>
-                <tbody class="text-on-surface-variant">
-                  <tr class="hover:bg-white/40 transition-colors">
-                    <td class="p-6 border-b border-primary/5 font-medium text-primary">1 Година</td>
-                    <td class="p-6 border-b border-primary/5 font-black text-primary/80">250₴</td>
-                    <td class="p-6 border-b border-primary/5 font-black text-primary/80">300₴</td>
-                  </tr>
-                  <tr class="hover:bg-white/40 transition-colors">
-                    <td class="p-6 border-b border-primary/5 font-medium text-primary">2 Години</td>
-                    <td class="p-6 border-b border-primary/5 font-black text-primary/80">400₴</td>
-                    <td class="p-6 border-b border-primary/5 font-black text-primary/80">500₴</td>
-                  </tr>
-                  <tr class="hover:bg-white/40 transition-colors">
-                    <td class="p-6 border-b border-primary/5 font-medium text-primary">3 Години</td>
-                    <td class="p-6 border-b border-primary/5 font-black text-primary/80">550₴</td>
-                    <td class="p-6 border-b border-primary/5 font-black text-primary/80">650₴</td>
-                  </tr>
-                  <tr class="hover:bg-white/50 transition-colors bg-secondary/5">
-                    <td class="p-6 font-black text-primary">Світловий день</td>
-                    <td class="p-6 font-black text-secondary text-xl">900₴</td>
-                    <td class="p-6 font-black text-secondary text-xl">1100₴</td>
-                  </tr>
-                </tbody>
-              </table>
+                      <th
+                        class="p-6 text-secondary font-label-bold uppercase tracking-widest text-sm"
+                        data-i18n="rentDuration"
+                        >Тривалість</th
+                      >
+                      <th
+                        class="p-6 text-secondary font-label-bold uppercase tracking-widest text-sm"
+                        data-i18n="weekday"
+                        >Будні</th
+                      >
+                      <th
+                        class="p-6 text-secondary font-label-bold uppercase tracking-widest text-sm"
+                        data-i18n="weekend"
+                        >Вихідні</th
+                      >
+                    </tr>
+                  </thead>
+                  <tbody id="price-table-body" class="text-on-surface-variant">
+                    <!-- rows injected from price.js -->
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
@@ -839,10 +850,10 @@
 
         <div
           id="location-slider"
-          class="slider-container flex gap-gutter overflow-x-auto pb-8 cursor-grab active:cursor-grabbing"
+          class="slider-container flex overflow-x-auto pb-8 cursor-grab active:cursor-grabbing"
         >
           <!-- Location 1: Muromets -->
-          <div class="slider-item min-w-full shrink-0">
+          <div class="slider-item">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <div
                 class="lg:col-span-2 liquid-glass rounded-[3rem] overflow-hidden h-80 md:h-[520px] relative"
@@ -920,7 +931,7 @@
           </div>
 
           <!-- Location 2: Obolon -->
-          <div class="slider-item min-w-full shrink-0">
+          <div class="slider-item">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <div
                 class="lg:col-span-2 liquid-glass rounded-[3rem] overflow-hidden h-80 md:h-[520px] relative"
@@ -1001,14 +1012,22 @@
         <!-- Slider controls -->
         <div class="flex justify-center gap-5 mt-8">
           <button
+            type="button"
+            data-slider-btn="location-slider"
+            data-dir="-1"
             onclick="scrollSlider('location-slider', -1)"
-            class="w-14 h-14 rounded-full liquid-glass flex items-center justify-center text-primary hover:text-secondary transition-all"
+            class="slider-btn w-14 h-14 rounded-full liquid-glass flex items-center justify-center text-primary hover:text-secondary"
+            aria-label="Previous location"
           >
             <span class="material-symbols-outlined text-2xl">west</span>
           </button>
           <button
+            type="button"
+            data-slider-btn="location-slider"
+            data-dir="1"
             onclick="scrollSlider('location-slider', 1)"
-            class="w-14 h-14 rounded-full liquid-glass flex items-center justify-center text-primary hover:text-secondary transition-all"
+            class="slider-btn w-14 h-14 rounded-full liquid-glass flex items-center justify-center text-primary hover:text-secondary"
+            aria-label="Next location"
           >
             <span class="material-symbols-outlined text-2xl">east</span>
           </button>

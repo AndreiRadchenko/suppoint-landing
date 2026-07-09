@@ -138,12 +138,35 @@
   -ms-overflow-style: none;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  /* touch-action: pan-x; */
 }
 .slider-container::-webkit-scrollbar {
   display: none;
 }
 .slider-item {
-  scroll-snap-align: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.slider-btn {
+  transition:
+    opacity 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+.slider-btn:disabled,
+.slider-btn[aria-disabled='true'] {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: not-allowed;
+  color: rgba(20, 29, 33, 0.35);
 }
 
 .hide-scrollbar {

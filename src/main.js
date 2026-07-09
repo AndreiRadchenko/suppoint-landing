@@ -2,6 +2,7 @@ import './style.css'
 import { initNavbar } from './components/navbar.js'
 import { initI18n, setLanguage, getCurrentLanguage } from './i18n.js'
 import { initWeatherWidget } from './components/weatherWidget.js'
+import { initPriceTable } from './components/priceTable.js'
 
 // Initialize i18n
 initI18n()
@@ -21,70 +22,206 @@ if (document.readyState === 'loading') {
   safeInitWeather()
 }
 
-// // ── Slider helpers ────────────────────────────────────────────────────────
-// export function scrollSlider(id, direction) {
-//   const slider = document.getElementById(id)
-//   if (!slider) return
-//   slider.scrollBy({ left: direction * slider.clientWidth * 0.85, behavior: 'smooth' })
-// }
-// In your main.js or wherever scrollSlider is defined
+// Fill full price table from price.js
+function safeInitPriceTable() {
+  try {
+    initPriceTable()
+  } catch (e) {
+    console.error('Price table init failed:', e)
+  }
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', safeInitPriceTable)
+} else {
+  safeInitPriceTable()
+}
+
+// ── Slider helpers ────────────────────────────────────────────────────────
+const SLIDER_IDS = ['equipment-slider', 'location-slider']
+
+function getSlides(slider) {
+  return Array.from(slider.querySelectorAll(':scope > .slider-item'))
+}
+
+function getCurrentSlideIndex(slider) {
+  const slides = getSlides(slider)
+  if (!slides.length) return 0
+
+  const scrollLeft = slider.scrollLeft
+  let bestIndex = 0
+  let bestDistance = Infinity
+
+  slides.forEach((slide, index) => {
+    const distance = Math.abs(slide.offsetLeft - scrollLeft)
+    if (distance < bestDistance) {
+      bestDistance = distance
+      bestIndex = index
+    }
+  })
+
+  return bestIndex
+}
+
+function scrollToSlide(slider, index, behavior = 'smooth') {
+  const slides = getSlides(slider)
+  if (!slides.length) return
+
+  const clamped = Math.max(0, Math.min(index, slides.length - 1))
+  const target = slides[clamped]
+  if (!target) return
+
+  slider.scrollTo({
+    left: target.offsetLeft,
+    behavior,
+  })
+
+  // Keep buttons in sync even while smooth scroll is in progress
+  updateSliderButtons(slider.id)
+}
+
 function scrollSlider(sliderId, direction) {
   const slider = document.getElementById(sliderId)
   if (!slider) return
 
-  const scrollAmount = slider.offsetWidth * 0.8
-  slider.scrollBy({
-    left: scrollAmount * direction,
-    behavior: 'smooth',
+  const current = getCurrentSlideIndex(slider)
+  scrollToSlide(slider, current + direction)
+}
+
+function updateSliderButtons(sliderId) {
+  const slider = document.getElementById(sliderId)
+  if (!slider) return
+
+  const slides = getSlides(slider)
+  const index = getCurrentSlideIndex(slider)
+  const atStart = index <= 0
+  const atEnd = index >= slides.length - 1 || slides.length <= 1
+
+  document.querySelectorAll(`[data-slider-btn="${sliderId}"]`).forEach((btn) => {
+    const dir = Number(btn.dataset.dir)
+    const disabled = dir < 0 ? atStart : atEnd
+    btn.disabled = disabled
+    btn.setAttribute('aria-disabled', String(disabled))
   })
+}
+
+function initSliderControls(sliderId) {
+  const slider = document.getElementById(sliderId)
+  if (!slider) return
+
+  let scrollEndTimer = null
+
+  const sync = () => updateSliderButtons(sliderId)
+
+  slider.addEventListener(
+    'scroll',
+    () => {
+      // Live update while dragging / swiping
+      sync()
+      clearTimeout(scrollEndTimer)
+      scrollEndTimer = setTimeout(sync, 80)
+    },
+    { passive: true }
+  )
+
+  // Snap to nearest slide after touch/drag ends (mobile browsers can stop mid-slide)
+  const snapToNearest = () => {
+    const index = getCurrentSlideIndex(slider)
+    const slides = getSlides(slider)
+    const target = slides[index]
+    if (!target) return
+    if (Math.abs(slider.scrollLeft - target.offsetLeft) > 1) {
+      scrollToSlide(slider, index, 'smooth')
+    } else {
+      sync()
+    }
+  }
+
+  slider.addEventListener('scrollend', snapToNearest)
+  // Fallback for browsers without scrollend
+  slider.addEventListener(
+    'touchend',
+    () => {
+      setTimeout(snapToNearest, 50)
+    },
+    { passive: true }
+  )
+
+  window.addEventListener('resize', () => {
+    // Re-align current slide after layout changes
+    scrollToSlide(slider, getCurrentSlideIndex(slider), 'auto')
+  })
+
+  // Initial state
+  scrollToSlide(slider, 0, 'auto')
+  sync()
 }
 
 function initDragScroll(id) {
   const slider = document.getElementById(id)
   if (!slider) return
-  let down = false,
-    startX = 0,
-    left = 0
+
+  let down = false
+  let startX = 0
+  let left = 0
+  let moved = false
+
   slider.addEventListener('mousedown', (e) => {
+    // Only primary button
+    if (e.button !== 0) return
     down = true
-    startX = e.pageX - slider.offsetLeft
+    moved = false
+    startX = e.pageX
     left = slider.scrollLeft
     slider.style.scrollBehavior = 'auto'
+    slider.classList.add('cursor-grabbing')
   })
-  slider.addEventListener('mouseleave', () => {
+
+  const endDrag = () => {
+    if (!down) return
     down = false
     slider.style.scrollBehavior = 'smooth'
-  })
-  slider.addEventListener('mouseup', () => {
-    down = false
-    slider.style.scrollBehavior = 'smooth'
-  })
+    slider.classList.remove('cursor-grabbing')
+    if (moved) {
+      scrollToSlide(slider, getCurrentSlideIndex(slider), 'smooth')
+    }
+  }
+
+  slider.addEventListener('mouseleave', endDrag)
+  window.addEventListener('mouseup', endDrag)
   slider.addEventListener('mousemove', (e) => {
     if (!down) return
     e.preventDefault()
-    slider.scrollLeft = left - (e.pageX - slider.offsetLeft - startX) * 2
+    const dx = e.pageX - startX
+    if (Math.abs(dx) > 3) moved = true
+    slider.scrollLeft = left - dx
   })
 }
 
 function initAutoScroll(id, interval = 7000) {
   // if (window.innerWidth < 768) return
+
   const slider = document.getElementById(id)
   if (!slider) return
+
   let dir = 1
   setInterval(() => {
-    const atEnd = slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 20
-    const atStart = slider.scrollLeft <= 20
-    if (atEnd) dir = -1
-    if (atStart) dir = 1
-    slider.scrollBy({ left: dir * slider.clientWidth * 0.4, behavior: 'smooth' })
+    const slides = getSlides(slider)
+    if (slides.length <= 1) return
+
+    const current = getCurrentSlideIndex(slider)
+    if (current >= slides.length - 1) dir = -1
+    if (current <= 0) dir = 1
+    scrollToSlide(slider, current + dir)
   }, interval)
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  initDragScroll('equipment-slider')
-  initDragScroll('location-slider')
-  initAutoScroll('equipment-slider', 6000)
-  initAutoScroll('location-slider', 10000)
+  SLIDER_IDS.forEach((id) => {
+    initSliderControls(id)
+    initDragScroll(id)
+  })
+  initAutoScroll('equipment-slider', 15000)
+  initAutoScroll('location-slider', 15000)
 })
 
 // expose for inline onclick attributes
