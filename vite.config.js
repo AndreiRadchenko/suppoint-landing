@@ -7,7 +7,7 @@ import { fileURLToPath } from 'url'
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 export default defineConfig({
-  base: '/suppoint-landing/',
+  // base: '/suppoint-landing/',
   plugins: [
     tailwindcss(),
     handlebars({
