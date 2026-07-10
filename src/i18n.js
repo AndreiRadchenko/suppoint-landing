@@ -8,7 +8,11 @@ let currentLang = localStorage.getItem('lang') || 'uk'
  * @returns {string} Translated text or key if not found
  */
 export function t(key) {
-  return translations[currentLang]?.[key] ?? key
+  const dict = translations[currentLang]
+  if (!dict) return key
+  // Support nested keys via dot notation (e.g. 'location1.name.title')
+  const value = key.split('.').reduce((acc, part) => (acc == null ? acc : acc[part]), dict)
+  return value ?? key
 }
 
 /**
@@ -26,7 +30,7 @@ export function setLanguage(lang) {
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.dataset.i18n
     const text = t(key)
-    
+
     // Support for attributes (e.g., data-i18n="placeholder:emailPlaceholder")
     if (key.includes(':')) {
       const [attr, translationKey] = key.split(':')

@@ -14,7 +14,8 @@
       <div
         class="glow-teal blur-[150px] absolute bottom-[20%] right-[10%] w-[600px] h-[600px]"
       ></div>
-      <div
+    </div> -->
+    <!-- <div
         class="glow-cyan blur-[100px] opacity-40 absolute top-[40%] right-[5%] w-[400px] h-[400px]"
       ></div>
     </div> -->
@@ -606,7 +607,9 @@
       <!-- ── 6. WHY SUPPOINT — bento ─────────────────────────────────────── -->
       <section class="py-12 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
         <div class="mb-16 text-center lg:text-left">
-          <h2 class="font-headline-lg text-headline-mobile md:text-headline-lg text-primary mb-4"
+          <h2
+            class="font-headline-lg text-headline-mobile md:text-headline-lg text-primary mb-4"
+            data-i18n="whySupPoint.title"
             >Чому SUPPOINT?</h2
           >
           <div class="w-24 h-1.5 bg-sunny-accent rounded-full mx-auto lg:mx-0"></div>
@@ -623,8 +626,15 @@
                 style="filter: drop-shadow(0 0 20px rgba(255, 165, 0, 0.2))"
                 >bolt</span
               >
-              <h3 class="font-headline-lg text-3xl text-primary">Повна автоматизація</h3>
-              <p class="text-body-lg text-on-surface-variant max-w-md leading-relaxed">
+              <h3
+                class="font-headline-lg text-3xl text-primary"
+                data-i18n="whySupPoint.automation.title"
+                >Повна автоматизація</h3
+              >
+              <p
+                class="text-body-lg text-on-surface-variant max-w-md leading-relaxed"
+                data-i18n="whySupPoint.automation.desc"
+              >
                 Жодних паперових договорів чи очікування персоналу. Весь процес від броні до
                 відкриття комірки з сапом відбувається у вашому смартфоні за лічені секунди.
               </p>
@@ -648,8 +658,14 @@
             >
               <span class="material-symbols-outlined text-secondary text-3xl">verified_user</span>
             </div>
-            <h4 class="font-headline-lg text-2xl text-primary">Легкий старт</h4>
-            <p class="text-on-surface-variant leading-relaxed"
+            <h4
+              class="font-headline-lg text-2xl text-primary"
+              data-i18n="whySupPoint.easyStart.title"
+              >Легкий старт</h4
+            >
+            <p
+              class="text-on-surface-variant leading-relaxed"
+              data-i18n="whySupPoint.easyStart.desc"
               >Проста реєстрація через бот та миттєвий доступ до обладнання.</p
             >
           </div>
@@ -663,8 +679,14 @@
             >
               <span class="material-symbols-outlined text-secondary text-3xl">water_drop</span>
             </div>
-            <h4 class="font-headline-lg text-2xl text-primary">Топове обладнання</h4>
-            <p class="text-on-surface-variant leading-relaxed"
+            <h4
+              class="font-headline-lg text-2xl text-primary"
+              data-i18n="whySupPoint.equipment.title"
+              >Топове обладнання</h4
+            >
+            <p
+              class="text-on-surface-variant leading-relaxed"
+              data-i18n="whySupPoint.equipment.desc"
               >Використовуємо лише професійні та стабільні сапборди для вашого комфорту.</p
             >
           </div>
@@ -674,8 +696,14 @@
             class="md:col-span-8 liquid-glass p-10 rounded-[3rem] flex items-center gap-10 overflow-hidden"
           >
             <div class="flex-1">
-              <h3 class="font-headline-lg text-2xl text-primary mb-3">Доступно 24/7</h3>
-              <p class="text-body-lg text-on-surface-variant"
+              <h3
+                class="font-headline-lg text-2xl text-primary mb-3"
+                data-i18n="whySupPoint.alwaysOpen.title"
+                >Доступно 24/7</h3
+              >
+              <p
+                class="text-body-lg text-on-surface-variant"
+                data-i18n="whySupPoint.alwaysOpen.desc"
                 >Катайтесь на світанку або проводжайте захід сонця — ми працюємо цілодобово.</p
               >
             </div>
@@ -692,8 +720,12 @@
 
       <!-- ── 7. SOCIAL FEED ──────────────────────────────────────────────── -->
       <section class="py-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-        <div class="flex justify-between items-center mb-8">
-          <h2 class="font-headline-lg text-headline-mobile md:text-2xl text-primary"
+        <div
+          class="flex flex-col items-start gap-4 md:flex-row md:justify-between md:items-center mb-8"
+        >
+          <h2
+            class="font-headline-lg text-headline-mobile md:text-2xl text-primary"
+            data-i18n="socialFeedTitle"
             >Ми в соцмережах</h2
           >
           <div class="flex gap-3">
@@ -702,16 +734,40 @@
               target="_blank"
               rel="noopener"
               aria-label="Telegram"
-              class="w-10 h-10 rounded-full liquid-glass flex items-center justify-center text-primary hover:text-secondary transition-all"
+              data-tooltip="Telegram"
+              class="tooltip w-10 h-10 rounded-full liquid-glass flex items-center justify-center text-primary hover:text-secondary transition-all"
             >
-              <span class="material-symbols-outlined text-lg">send</span>
+              <img src="/assets/images/icon-telegram.svg" alt="Telegram" class="w-5 h-5" />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/suppointrental/"
+              target="_blank"
+              rel="noopener"
               aria-label="Instagram"
-              class="w-10 h-10 rounded-full liquid-glass flex items-center justify-center text-primary hover:text-secondary transition-all"
+              data-tooltip="Instagram"
+              class="tooltip w-10 h-10 rounded-full liquid-glass flex items-center justify-center text-primary hover:text-secondary transition-all"
             >
-              <span class="material-symbols-outlined text-lg">photo_camera</span>
+              <img src="/assets/images/icon-instagram.svg" alt="Instagram" class="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.facebook.com/share/1dcYVP3ybV/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook"
+              data-tooltip="Facebook"
+              class="tooltip w-10 h-10 rounded-full liquid-glass flex items-center justify-center text-primary hover:text-secondary transition-all"
+            >
+              <img src="/assets/images/icon-facebook.svg" alt="Facebook" class="w-5 h-5" />
+            </a>
+            <a
+              href="https://youtube.com/@suppointrental?si=__sRX_uTat8Ey-EA"
+              target="_blank"
+              rel="noopener"
+              aria-label="YouTube"
+              data-tooltip="YouTube"
+              class="tooltip w-10 h-10 rounded-full liquid-glass flex items-center justify-center text-primary hover:text-secondary transition-all"
+            >
+              <img src="/assets/images/icon-youtube.svg" alt="YouTube" class="w-5 h-5" />
             </a>
           </div>
         </div>
@@ -727,21 +783,21 @@
             <img
               class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               alt="Friends at rental station"
-              src="/assets/images/social-station.jpg"
-            />
-          </div>
-          <div class="aspect-square rounded-2xl overflow-hidden">
-            <img
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              alt="Drone shot of paddleboards on lake"
               src="/assets/images/social-drone-lake.jpg"
             />
           </div>
           <div class="aspect-square rounded-2xl overflow-hidden">
             <img
               class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              alt="Drone shot of paddleboards on lake"
+              src="/assets/images/media1.webp"
+            />
+          </div>
+          <div class="aspect-square rounded-2xl overflow-hidden">
+            <img
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               alt="SUPPOINT rental locker app interaction"
-              src="/assets/images/social-app-locker.jpg"
+              src="/assets/images/media2.webp"
             />
           </div>
         </div>
@@ -753,11 +809,13 @@
         class="py-12 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden"
       >
         <div class="flex flex-col items-center mb-16 text-center">
-          <h2 class="font-headline-lg text-headline-mobile md:text-headline-lg text-primary"
+          <h2
+            class="font-headline-lg text-headline-mobile md:text-headline-lg text-primary"
+            data-i18n="locationsTitle"
             >Де нас знайти?</h2
           >
           <div class="w-24 h-1.5 bg-sunny-accent rounded-full mt-4"></div>
-          <p class="text-on-surface-variant text-lg mt-6 max-w-xl">
+          <p class="text-on-surface-variant text-lg mt-6 max-w-xl" data-i18n="locationsDesc">
             Наші локації оточені мальовничою природою та спокійною водою.
           </p>
         </div>
@@ -766,14 +824,114 @@
           id="location-slider"
           class="slider-container flex overflow-x-auto pb-8 cursor-grab active:cursor-grabbing"
         >
-          <!-- Location 1: Muromets -->
+          <!-- Location 1: Dobropark -->
           <div class="slider-item">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <div
                 class="lg:col-span-2 liquid-glass rounded-[3rem] overflow-hidden h-80 md:h-[520px] relative"
               >
                 <img
-                  alt="Muromets Park"
+                  alt="Dobropark"
+                  class="w-full h-full object-cover opacity-70"
+                  src="/assets/images/map-dobropark.png"
+                />
+                <div class="absolute inset-0 flex items-center justify-center flex-col gap-5">
+                  <span
+                    class="material-symbols-outlined text-secondary text-8xl animate-bounce"
+                    style="filter: drop-shadow(0 0 30px rgba(0, 106, 98, 0.3))"
+                    >location_on</span
+                  >
+                  <div class="liquid-glass p-7 rounded-2xl text-center max-w-[260px] w-full">
+                    <h4
+                      class="font-headline-lg text-xl text-primary mb-1"
+                      data-i18n="location1.name.title"
+                      >Добропарк</h4
+                    >
+                    <p
+                      class="text-on-surface-variant text-xs uppercase tracking-widest"
+                      data-i18n="location1.name.addr"
+                      >Купальне озеро</p
+                    >
+                    <span
+                      class="inline-block mt-4 px-4 py-1.5 rounded-full bg-secondary/10 text-secondary text-xs font-black uppercase tracking-widest"
+                      data-i18n="location1.state"
+                      >відкрито</span
+                    >
+                    <div
+                      class="text-on-surface-variant text-[11px] font-bold uppercase tracking-widest mt-2 opacity-60 flex items-center justify-center gap-1"
+                    >
+                      <span class="text-sm" data-i18n="location1.freesup">pin_drop</span>
+                      <span data-i18n="location1.freesupLabel">50°25'10.3"N 29°56'40.8"E</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="liquid-glass rounded-[3rem] p-10 flex flex-col justify-center">
+                <div class="space-y-8">
+                  <div>
+                    <h4 class="font-label-bold text-primary mb-4 flex items-center gap-3 text-lg">
+                      <span class="material-symbols-outlined text-secondary text-2xl"
+                        >schedule</span
+                      >
+                      <span data-i18n="location1.schedule.title">Графік роботи</span>
+                    </h4>
+                    <ul class="text-on-surface-variant space-y-3">
+                      <li class="flex justify-between border-b border-primary/5 pb-2"
+                        ><span data-i18n="location1.schedule.weekday.title">Будні:</span>
+                        <span
+                          class="font-black text-primary"
+                          data-i18n="location1.schedule.weekday.time"
+                          >09:00 – 21:00</span
+                        ></li
+                      >
+                      <li class="flex justify-between"
+                        ><span data-i18n="location1.schedule.weekend.title">Вихідні:</span>
+                        <span
+                          class="font-black text-primary"
+                          data-i18n="location1.schedule.weekend.time"
+                          >07:00 – 22:00</span
+                        ></li
+                      >
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="font-label-bold text-primary mb-4 flex items-center gap-3 text-lg">
+                      <span class="material-symbols-outlined text-secondary text-2xl"
+                        >directions_car</span
+                      >
+                      <span data-i18n="location1.howtoget.title">Як дістатись</span>
+                    </h4>
+                    <p
+                      class="text-on-surface-variant text-sm leading-relaxed"
+                      data-i18n="location1.howtoget.desc"
+                    >
+                      Парк Добропарк, с. Мотижин. Рухайтесь до Купального озера — точка прокату
+                      SUPPOINT біля води.
+                    </p>
+                  </div>
+                  <a
+                    href="https://maps.google.com/?q=50.423947563230406, 29.93326461769866"
+                    data-route="location1.coordinates"
+                    target="_blank"
+                    rel="noopener"
+                    class="sunny-btn w-full py-4 gap-3 text-sm"
+                  >
+                    <span class="material-symbols-outlined text-base">map</span>
+                    <span data-i18n="location1.route">Прокласти маршрут</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Location 2: Dobropark (identical) -->
+          <div class="slider-item">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div
+                class="lg:col-span-2 liquid-glass rounded-[3rem] overflow-hidden h-80 md:h-[520px] relative"
+              >
+                <img
+                  alt="Dobropark"
                   class="w-full h-full object-cover opacity-70"
                   src="/assets/images/location-muromets.jpg"
                 />
@@ -784,18 +942,27 @@
                     >location_on</span
                   >
                   <div class="liquid-glass p-7 rounded-2xl text-center max-w-[260px] w-full">
-                    <h4 class="font-headline-lg text-xl text-primary mb-1">Головна база</h4>
-                    <p class="text-on-surface-variant text-xs uppercase tracking-widest"
-                      >Парк Муромець, Київ</p
+                    <h4
+                      class="font-headline-lg text-xl text-primary mb-1"
+                      data-i18n="location1.name.title"
+                      >Добропарк</h4
+                    >
+                    <p
+                      class="text-on-surface-variant text-xs uppercase tracking-widest"
+                      data-i18n="location1.name.addr"
+                      >Купальне озеро</p
                     >
                     <span
                       class="inline-block mt-4 px-4 py-1.5 rounded-full bg-secondary/10 text-secondary text-xs font-black uppercase tracking-widest"
-                      >Відкрито</span
+                      data-i18n="location1.state"
+                      >відкрито</span
                     >
                     <div
-                      class="text-on-surface-variant text-[11px] font-bold uppercase tracking-widest mt-2 opacity-60"
-                      >8 вільних сапів</div
+                      class="text-on-surface-variant text-[11px] font-bold uppercase tracking-widest mt-2 opacity-60 flex items-center justify-center gap-1"
                     >
+                      <span class="text-sm" data-i18n="location1.freesup">pin_drop</span>
+                      <span data-i18n="location1.freesupLabel">50°25'10.3"N 29°56'40.8"E</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -806,16 +973,24 @@
                       <span class="material-symbols-outlined text-secondary text-2xl"
                         >schedule</span
                       >
-                      Графік роботи
+                      <span data-i18n="location1.schedule.title">Графік роботи</span>
                     </h4>
                     <ul class="text-on-surface-variant space-y-3">
                       <li class="flex justify-between border-b border-primary/5 pb-2"
-                        ><span>Будні:</span>
-                        <span class="font-black text-primary">09:00 – 21:00</span></li
+                        ><span data-i18n="location1.schedule.weekday.title">Будні:</span>
+                        <span
+                          class="font-black text-primary"
+                          data-i18n="location1.schedule.weekday.time"
+                          >09:00 – 21:00</span
+                        ></li
                       >
                       <li class="flex justify-between"
-                        ><span>Вихідні:</span>
-                        <span class="font-black text-primary">07:00 – 22:00</span></li
+                        ><span data-i18n="location1.schedule.weekend.title">Вихідні:</span>
+                        <span
+                          class="font-black text-primary"
+                          data-i18n="location1.schedule.weekend.time"
+                          >07:00 – 22:00</span
+                        ></li
                       >
                     </ul>
                   </div>
@@ -824,98 +999,25 @@
                       <span class="material-symbols-outlined text-secondary text-2xl"
                         >directions_car</span
                       >
-                      Як дістатись
+                      <span data-i18n="location1.howtoget.title">Як дістатись</span>
                     </h4>
-                    <p class="text-on-surface-variant text-sm leading-relaxed">
-                      В'їзд у парк Муромець зі сторони Північного мосту. Рухайтесь прямо 500м до
-                      вказівника "SUPPOINT".
+                    <p
+                      class="text-on-surface-variant text-sm leading-relaxed"
+                      data-i18n="location1.howtoget.desc"
+                    >
+                      Парк Добропарк, с. Мотижин. Рухайтесь до Купального озера — точка прокату
+                      SUPPOINT біля води.
                     </p>
                   </div>
                   <a
-                    href="https://maps.google.com"
+                    href="https://maps.google.com/?q=50.423947563230406, 29.93326461769866"
+                    data-route="location1.coordinates"
                     target="_blank"
                     rel="noopener"
                     class="sunny-btn w-full py-4 gap-3 text-sm"
                   >
-                    <span class="material-symbols-outlined text-base">map</span> Прокласти маршрут
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Location 2: Obolon -->
-          <div class="slider-item">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              <div
-                class="lg:col-span-2 liquid-glass rounded-[3rem] overflow-hidden h-80 md:h-[520px] relative"
-              >
-                <img
-                  alt="Obolon Embankment"
-                  class="w-full h-full object-cover opacity-70"
-                  src="/assets/images/location-obolon.jpg"
-                />
-                <div class="absolute inset-0 flex items-center justify-center flex-col gap-5">
-                  <span
-                    class="material-symbols-outlined text-secondary text-8xl"
-                    style="filter: drop-shadow(0 0 30px rgba(0, 106, 98, 0.3))"
-                    >location_on</span
-                  >
-                  <div class="liquid-glass p-7 rounded-2xl text-center max-w-[260px] w-full">
-                    <h4 class="font-headline-lg text-xl text-primary mb-1">Оболонська Набережна</h4>
-                    <p class="text-on-surface-variant text-xs uppercase tracking-widest"
-                      >вул. Прирічна, Київ</p
-                    >
-                    <span
-                      class="inline-block mt-4 px-4 py-1.5 rounded-full bg-secondary/10 text-secondary text-xs font-black uppercase tracking-widest"
-                      >Відкрито</span
-                    >
-                    <div
-                      class="text-on-surface-variant text-[11px] font-bold uppercase tracking-widest mt-2 opacity-60"
-                      >5 вільних сапів</div
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="liquid-glass rounded-[3rem] p-10 flex flex-col justify-center">
-                <div class="space-y-8">
-                  <div>
-                    <h4 class="font-label-bold text-primary mb-4 flex items-center gap-3 text-lg">
-                      <span class="material-symbols-outlined text-secondary text-2xl"
-                        >schedule</span
-                      >
-                      Графік роботи
-                    </h4>
-                    <ul class="text-on-surface-variant space-y-3">
-                      <li class="flex justify-between border-b border-primary/5 pb-2"
-                        ><span>Будні:</span>
-                        <span class="font-black text-primary">10:00 – 20:00</span></li
-                      >
-                      <li class="flex justify-between"
-                        ><span>Вихідні:</span>
-                        <span class="font-black text-primary">08:00 – 21:00</span></li
-                      >
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 class="font-label-bold text-primary mb-4 flex items-center gap-3 text-lg">
-                      <span class="material-symbols-outlined text-secondary text-2xl"
-                        >directions_walk</span
-                      >
-                      Як дістатись
-                    </h4>
-                    <p class="text-on-surface-variant text-sm leading-relaxed">
-                      10 хвилин пішки від метро Героїв Дніпра. Знаходимось біля церкви на
-                      набережній.
-                    </p>
-                  </div>
-                  <a
-                    href="https://maps.google.com"
-                    target="_blank"
-                    rel="noopener"
-                    class="sunny-btn w-full py-4 gap-3 text-sm"
-                  >
-                    <span class="material-symbols-outlined text-base">map</span> Прокласти маршрут
+                    <span class="material-symbols-outlined text-base">map</span>
+                    <span data-i18n="location1.route">Прокласти маршрут</span>
                   </a>
                 </div>
               </div>

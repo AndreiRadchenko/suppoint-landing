@@ -221,11 +221,23 @@ document.addEventListener('DOMContentLoaded', () => {
     initDragScroll(id)
   })
   initAutoScroll('equipment-slider', 15000)
-  initAutoScroll('location-slider', 15000)
+  // initAutoScroll('location-slider', 15000)
+  initRouteLinks()
 })
 
 // expose for inline onclick attributes
 window.scrollSlider = scrollSlider
+
+// ── Route links ───────────────────────────────────────────────────────────
+// Build Google Maps links from a translation key holding "lat, lng"
+function initRouteLinks() {
+  document.querySelectorAll('[data-route]').forEach((el) => {
+    const coords = t(el.dataset.route).trim()
+    if (coords) {
+      el.href = `https://maps.google.com/?q=${encodeURIComponent(coords)}`
+    }
+  })
+}
 
 // Language switcher
 document.addEventListener('DOMContentLoaded', () => {
@@ -253,6 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.classList.toggle('active', e.detail.lang === 'en')
       }
     })
+    initRouteLinks()
   })
 
   // Set initial active state

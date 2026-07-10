@@ -1,5 +1,35 @@
 @import 'tailwindcss';
 
+/* ─── Tooltip ───────────────────────────────────────────────────────────── */
+.tooltip {
+  position: relative;
+}
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  white-space: nowrap;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 0.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+  z-index: 50;
+}
+.tooltip:hover::after,
+.tooltip:focus-visible::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 /* ─── Design Tokens ─────────────────────────────────────────────────────── */
 @theme {
   /* Colors */
@@ -99,6 +129,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Offset anchor jumps so the fixed floating navbar doesn't cover section titles */
+    scroll-padding-top: 5rem;
   }
 }
 

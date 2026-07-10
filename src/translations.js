@@ -71,7 +71,7 @@ export const translations = {
     maxExperience: 'Максимум вражень',
     allDay: 'Весь день',
     allDayPrice: '1 280₴',
-    fullKit: 'Повний комплект',
+    fullKit: 'Комплект спорядження',
     briefing: 'Бонус - гермомішок',
     dryBagGift: 'Оренда з вигідним продовженням',
     unlimitedTime: 'Без обмежень по часу',
@@ -79,10 +79,64 @@ export const translations = {
     choose: 'Обрати',
     book: 'Забронювати',
 
-    fullPriceTable: 'Повна таблиця тарифів',
+    fullPriceTable: 'Таблиця тарифів',
     rentDuration: 'Тривалість',
     weekday: 'Будні',
     weekend: 'Вихідні',
+
+    // Locations section
+    locationsTitle: 'Де нас знайти?',
+    locationsDesc: ' Наші локації оточені мальовничою природою та спокійною водою.',
+    location1: {
+      coordinates: '50.4239638597532, 29.933270242328998',
+      name: {
+        title: 'Добропарк',
+        addr: 'Купальне озеро',
+      },
+      freesup: '4',
+      freesupLabel: 'вільних сапів',
+      state: 'відкрито',
+      schedule: {
+        title: 'Графік роботи',
+        weekday: {
+          title: 'Будні:',
+          time: '10:00 - 20:00',
+        },
+        weekend: {
+          title: 'Вихідні:',
+          time: '10:00 - 20:00',
+        },
+      },
+      howtoget: {
+        title: 'Як дістатись',
+        desc: 'Парк Добропарк, с. Мотижин. Рухайтесь до Купального озера — точка прокату SUPPOINT біля води.',
+      },
+      route: 'Прокласти маршрут',
+    },
+
+    // Social feed section
+    socialFeedTitle: 'Ми в соцмережах',
+
+    // Why SUPPOINT section
+    whySupPoint: {
+      title: 'Чому SUPPOINT?',
+      automation: {
+        title: 'Повна автоматизація',
+        desc: 'Жодних паперових договорів чи очікування персоналу. Весь процес від броні до відкриття комірки з сапом відбувається у вашому смартфоні за лічені секунди.',
+      },
+      easyStart: {
+        title: 'Легкий старт',
+        desc: 'Проста реєстрація через бот та миттєвий доступ до обладнання.',
+      },
+      equipment: {
+        title: 'Топове обладнання',
+        desc: 'Використовуємо лише професійні та стабільні сапборди для вашого комфорту.',
+      },
+      alwaysOpen: {
+        title: 'Доступно 24/7',
+        desc: 'Катайтесь на світанку або проводжайте захід сонця — ми працюємо цілодобово.',
+      },
+    },
 
     // Footer
     footerBrand: 'SUPPOINT',
@@ -170,7 +224,7 @@ export const translations = {
     step2Desc: 'Choose your time and pay for the rental directly in the messenger.',
     step3Title: 'On the water!',
     step3Desc: 'Get your access code, grab your SUP, and enjoy your paddle.',
-    priceFrom: 'from 250₴',
+    priceFrom: 'from 320₴',
     perHour: 'per hour\nof ride',
 
     // Equipment section
@@ -197,10 +251,13 @@ export const translations = {
     chooseFormat: 'Choose a convenient water recreation format',
     quickDrive: 'Quick Drive',
     oneHour: '1 Hour',
+    oneHourPrice: '320₴',
     optimalChoice: 'Optimal Choice',
     twoHours: '2 Hours',
+    twoHoursPrice: '570₴',
     maxExperience: 'Maximum Experience',
     allDay: 'All Day',
+    allDayPrice: '1 280₴',
     fullKit: 'Full Kit',
     briefing: 'Briefing',
     dryBagGift: 'Dry Bag as a Gift',
@@ -208,6 +265,61 @@ export const translations = {
     priorityBooking: 'Priority booking',
     choose: 'Choose',
     book: 'Book',
+    fullPriceTable: 'Prices',
+
+    // Locations section
+    locationsTitle: 'Where to find us?',
+    locationsDesc: 'Our locations are surrounded by picturesque nature and calm water.',
+    location1: {
+      coordinates: '50.4239638597532, 29.933270242328998',
+      name: {
+        title: 'Dobropark',
+        addr: 'Swimming Lake',
+      },
+      freesup: '4',
+      freesupLabel: 'free SUPs',
+      state: 'open',
+      schedule: {
+        title: 'Working Hours',
+        weekday: {
+          title: 'Weekdays:',
+          time: '10:00 - 20:00',
+        },
+        weekend: {
+          title: 'Weekends:',
+          time: '10:00 - 20:00',
+        },
+      },
+      howtoget: {
+        title: 'How to get there',
+        desc: 'Dobropark, Motyzhyn village. Head to the Swimming Lake — the SUPPOINT rental point is by the water.',
+      },
+      route: 'Build route',
+    },
+
+    // Social feed section
+    socialFeedTitle: 'Our Social Media',
+
+    // Why SUPPOINT section
+    whySupPoint: {
+      title: 'Why SUPPOINT?',
+      automation: {
+        title: 'Full automation',
+        desc: 'No paper contracts or waiting for staff. The whole process from booking to opening the SUP locker happens in your smartphone in seconds.',
+      },
+      easyStart: {
+        title: 'Easy start',
+        desc: 'Simple registration via the bot and instant access to the equipment.',
+      },
+      equipment: {
+        title: 'Top-tier equipment',
+        desc: 'We use only professional and stable SUP boards for your comfort.',
+      },
+      alwaysOpen: {
+        title: 'Available 24/7',
+        desc: 'Ride at dawn or watch the sunset — we work around the clock.',
+      },
+    },
 
     // Footer
     footerBrand: 'SUPPOINT',
