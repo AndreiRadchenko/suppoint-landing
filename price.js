@@ -3,7 +3,7 @@
  * Do not edit manually — run: npm run update-prices
  *
  * Source: https://docs.google.com/spreadsheets/d/1-IUP7OdeZGyxACiC_Uvc0nLtO7oJTsiANHOX8QtV3rQ/edit?gid=0
- * Generated: 2026-07-09T16:25:05.644Z
+ * Generated: 2026-07-13T07:15:38.309Z
  *
  * Keys are time slots (H:MM). Values are prices in UAH.
  * special_* keys are package rows without a duration label in the sheet.

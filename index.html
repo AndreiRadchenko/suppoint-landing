@@ -29,11 +29,15 @@
       >
         <!-- BG image -->
         <div class="absolute inset-0 z-0 overflow-hidden">
-          <img
-            alt="Paddleboarders on a serene alpine lake at sunset"
-            class="w-full h-full object-cover scale-110 brightness-110"
-            src="/assets/images/hero-lake.jpg"
-          />
+          <picture>
+            <source media="(max-width: 767px)" srcset="/assets/images/hero-lake-mobile.webp" />
+            <source media="(min-width: 768px)" srcset="/assets/images/hero-lake-desktop.webp" />
+            <img
+              alt="Paddleboarders on a serene alpine lake at sunset"
+              class="w-full h-full object-cover scale-110 brightness-110"
+              src="/assets/images/hero-lake-desktop.webp"
+            />
+          </picture>
           <div
             class="absolute inset-0 bg-gradient-to-b from-background/30 via-background/10 to-background"
           ></div>
@@ -933,7 +937,7 @@
                 <img
                   alt="Dobropark"
                   class="w-full h-full object-cover opacity-70"
-                  src="/assets/images/location-muromets.jpg"
+                  src="/assets/images/map-dobropark.png"
                 />
                 <div class="absolute inset-0 flex items-center justify-center flex-col gap-5">
                   <span
