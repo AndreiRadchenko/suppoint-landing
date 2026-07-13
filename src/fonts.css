@@ -164,13 +164,13 @@
     U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* Material Symbols Outlined (self-hosted, full font) */
+/* Material Symbols Outlined (self-hosted, subsetted to used glyphs) */
 @font-face {
   font-family: 'Material Symbols Outlined';
   font-style: normal;
   font-weight: 100 700;
   font-display: block;
-  src: url(/assets/fonts/material-symbols.woff2) format('woff2');
+  src: url(/assets/fonts/material-symbols.subset.woff2) format('woff2');
 }
 
 .material-symbols-outlined {
