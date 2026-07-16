@@ -1,4 +1,4 @@
-import { priceList } from '../../price.js'
+import { priceList } from '../price.js'
 
 function formatPrice(value) {
   if (value == null) return '—'

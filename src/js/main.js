@@ -1,4 +1,4 @@
-import './style.css'
+import '../styles/style.css'
 import { initNavbar } from './components/navbar.js'
 import { initI18n, setLanguage, getCurrentLanguage } from './i18n.js'
 import { initWeatherWidget } from './components/weatherWidget.js'

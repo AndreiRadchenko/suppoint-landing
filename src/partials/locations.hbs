@@ -1,0 +1,49 @@
+<!-- ── 8. LOCATIONS ────────────────────────────────────────────────── -->
+<section
+  id="locations"
+  class="py-12 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden"
+>
+  <div class="flex flex-col items-center mb-16 text-center">
+    <h2
+      class="font-headline-lg text-headline-mobile md:text-headline-lg text-primary"
+      data-i18n="locationsTitle"
+      >Де нас знайти?</h2
+    >
+    <div class="w-24 h-1.5 bg-sunny-accent rounded-full mt-4"></div>
+    <p class="text-on-surface-variant text-lg mt-6 max-w-xl" data-i18n="locationsDesc">
+      Наші локації оточені мальовничою природою та спокійною водою.
+    </p>
+  </div>
+
+  <div
+    id="location-slider"
+    class="slider-container flex overflow-x-auto pb-8 cursor-grab active:cursor-grabbing"
+  >
+    {{> locationCard}}
+    {{> locationCard}}
+  </div>
+
+  <!-- Slider controls -->
+  <div class="flex justify-center gap-5 mt-8">
+    <button
+      type="button"
+      data-slider-btn="location-slider"
+      data-dir="-1"
+      onclick="scrollSlider('location-slider', -1)"
+      class="slider-btn w-14 h-14 rounded-full liquid-glass flex items-center justify-center text-primary hover:text-secondary"
+      aria-label="Previous location"
+    >
+      <span class="material-symbols-outlined text-2xl">west</span>
+    </button>
+    <button
+      type="button"
+      data-slider-btn="location-slider"
+      data-dir="1"
+      onclick="scrollSlider('location-slider', 1)"
+      class="slider-btn w-14 h-14 rounded-full liquid-glass flex items-center justify-center text-primary hover:text-secondary"
+      aria-label="Next location"
+    >
+      <span class="material-symbols-outlined text-2xl">east</span>
+    </button>
+  </div>
+</section>

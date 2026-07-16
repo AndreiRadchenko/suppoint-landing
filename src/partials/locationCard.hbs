@@ -1,0 +1,99 @@
+<!-- Location slide (reused 2× in the locations slider) -->
+<div class="slider-item">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div
+      class="lg:col-span-2 liquid-glass rounded-[3rem] overflow-hidden h-80 md:h-[520px] relative"
+    >
+      <img
+        alt="Dobropark"
+        class="w-full h-full object-cover opacity-70"
+        src="/src/assets/images/map-dobropark.png"
+      />
+      <div class="absolute inset-0 flex items-center justify-center flex-col gap-5">
+        <span
+          class="material-symbols-outlined text-secondary text-8xl animate-bounce"
+          style="filter: drop-shadow(0 0 30px rgba(0, 106, 98, 0.3))"
+          >location_on</span
+        >
+        <div class="liquid-glass p-7 rounded-2xl text-center max-w-[260px] w-full">
+          <h4
+            class="font-headline-lg text-xl text-primary mb-1"
+            data-i18n="location1.name.title"
+            >Добропарк</h4
+          >
+          <p
+            class="text-on-surface-variant text-xs uppercase tracking-widest"
+            data-i18n="location1.name.addr"
+            >Купальне озеро</p
+          >
+          <span
+            class="inline-block mt-4 px-4 py-1.5 rounded-full bg-secondary/10 text-secondary text-xs font-black uppercase tracking-widest"
+            data-i18n="location1.state"
+            >відкрито</span
+          >
+          <div
+            class="text-on-surface-variant text-[11px] font-bold uppercase tracking-widest mt-2 opacity-60 flex items-center justify-center gap-1"
+          >
+            <span class="text-sm" data-i18n="location1.freesup">pin_drop</span>
+            <span data-i18n="location1.freesupLabel">50°25'10.3"N 29°56'40.8"E</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="liquid-glass rounded-[3rem] p-10 flex flex-col justify-center">
+      <div class="space-y-8">
+        <div>
+          <h4 class="font-label-bold text-primary mb-4 flex items-center gap-3 text-lg">
+            <span class="material-symbols-outlined text-secondary text-2xl"
+              >schedule</span
+            >
+            <span data-i18n="location1.schedule.title">Графік роботи</span>
+          </h4>
+          <ul class="text-on-surface-variant space-y-3">
+            <li class="flex justify-between border-b border-primary/5 pb-2"
+              ><span data-i18n="location1.schedule.weekday.title">Будні:</span>
+              <span
+                class="font-black text-primary"
+                data-i18n="location1.schedule.weekday.time"
+                >09:00 – 21:00</span
+              ></li
+            >
+            <li class="flex justify-between"
+              ><span data-i18n="location1.schedule.weekend.title">Вихідні:</span>
+              <span
+                class="font-black text-primary"
+                data-i18n="location1.schedule.weekend.time"
+                >07:00 – 22:00</span
+              ></li
+            >
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-label-bold text-primary mb-4 flex items-center gap-3 text-lg">
+            <span class="material-symbols-outlined text-secondary text-2xl"
+              >directions_car</span
+            >
+            <span data-i18n="location1.howtoget.title">Як дістатись</span>
+          </h4>
+          <p
+            class="text-on-surface-variant text-sm leading-relaxed"
+            data-i18n="location1.howtoget.desc"
+          >
+            Парк Добропарк, с. Мотижин. Рухайтесь до Купального озера — точка прокату
+            SUPPOINT біля води.
+          </p>
+        </div>
+        <a
+          href="https://maps.google.com/?q=50.423947563230406, 29.93326461769866"
+          data-route="location1.coordinates"
+          target="_blank"
+          rel="noopener"
+          class="sunny-btn w-full py-4 gap-3 text-sm"
+        >
+          <span class="material-symbols-outlined text-base">map</span>
+          <span data-i18n="location1.route">Прокласти маршрут</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

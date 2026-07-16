@@ -1,0 +1,158 @@
+<!-- ── 4. EQUIPMENT ────────────────────────────────────────────────── -->
+<section
+  class="py-12 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden"
+>
+  <div class="mb-16 flex flex-col lg:flex-row justify-between items-end gap-8">
+    <div class="max-w-2xl">
+      <h2
+        class="font-headline-lg text-headline-mobile md:text-headline-lg text-primary mb-4"
+        data-i18n="ourEquipment"
+        >Наше обладнання</h2
+      >
+      <p class="text-on-surface-variant text-lg" data-i18n="equipmentDesc">
+        Кожен комплект ретельно підготовлений для вашої безпеки та комфорту. Ми використовуємо
+        лише перевірені бренди.
+      </p>
+    </div>
+    <div class="flex gap-4 shrink-0">
+      <button
+        type="button"
+        data-slider-btn="equipment-slider"
+        data-dir="-1"
+        onclick="scrollSlider('equipment-slider', -1)"
+        class="slider-btn w-14 h-14 rounded-full liquid-glass flex items-center justify-center text-primary hover:text-secondary"
+        aria-label="Previous equipment slide"
+      >
+        <span class="material-symbols-outlined text-2xl">chevron_left</span>
+      </button>
+      <button
+        type="button"
+        data-slider-btn="equipment-slider"
+        data-dir="1"
+        onclick="scrollSlider('equipment-slider', 1)"
+        class="slider-btn w-14 h-14 rounded-full liquid-glass flex items-center justify-center text-primary hover:text-secondary"
+        aria-label="Next equipment slide"
+      >
+        <span class="material-symbols-outlined text-2xl">chevron_right</span>
+      </button>
+    </div>
+  </div>
+
+  <div
+    id="equipment-slider"
+    class="slider-container flex overflow-x-auto pb-8 cursor-grab active:cursor-grabbing"
+  >
+    <!-- Slide 1: Full kit -->
+    <div class="slider-item w-full flex justify-center items-start">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center justify-center max-w-[98%]">
+        <div class="liquid-glass rounded-[3rem] overflow-hidden p-3">
+          <img
+            alt="SUP board standard kit"
+            class="w-full h-72 md:h-[420px] object-cover rounded-[2.5rem]"
+            src="/src/assets/images/equipment-standard.jpg"
+          />
+        </div>
+        <div class="space-y-6 lg:pl-4 max-w-[100%]">
+          <h3 class="font-headline-lg text-2xl text-primary" data-i18n="fullKit"
+            >Повний комплект для плавання</h3
+          >
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 min-w-full">
+            <div class="liquid-glass p-4 rounded-2xl flex items-start gap-3 min-w-[100%]">
+              <span class="material-symbols-outlined text-secondary text-2xl">surfing</span>
+              <div
+                ><h4 class="font-label-bold text-primary mb-1 text-sm" data-i18n="board"
+                  >Сапборд</h4
+                ><p class="text-xs text-on-surface-variant" data-i18n="boardDesc"
+                  >Стійка надувна дошка 10'6"</p
+                ></div
+              >
+            </div>
+            <div class="liquid-glass p-4 rounded-2xl flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary text-2xl">🛶</span>
+              <div
+                ><h4 class="font-label-bold text-primary mb-1 text-sm" data-i18n="paddle"
+                  >Весло</h4
+                ><p class="text-xs text-on-surface-variant" data-i18n="paddleDesc"
+                  >Регульоване алюмінієве</p
+                ></div
+              >
+            </div>
+            <div class="liquid-glass p-4 rounded-2xl flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary text-2xl">anchor</span>
+              <div
+                ><h4 class="font-label-bold text-primary mb-1 text-sm" data-i18n="leash"
+                  >Ліш</h4
+                ><p class="text-xs text-on-surface-variant" data-i18n="leashDesc"
+                  >Страхувальний шнур</p
+                ></div
+              >
+            </div>
+            <div class="liquid-glass p-4 rounded-2xl flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary text-3xl"
+                >health_and_safety</span
+              >
+              <div
+                ><h4 class="font-label-bold text-primary mb-1 text-sm" data-i18n="vest"
+                  >Жилет</h4
+                ><p class="text-xs text-on-surface-variant" data-i18n="vestDesc"
+                  >Сертифікований під розмір</p
+                ></div
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2: Accessories -->
+    <div class="slider-item w-full flex justify-center items-start">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center max-w-[98%]">
+        <div class="liquid-glass rounded-[3rem] overflow-hidden p-3 lg:order-2">
+          <img
+            alt="SUP accessories and locker"
+            class="w-full h-72 md:h-[420px] object-cover rounded-[2.5rem]"
+            src="/src/assets/images/equipment-accessories.jpg"
+          />
+        </div>
+        <div class="space-y-4 lg:pr-4 max-w-[460px]">
+          <h3 class="font-headline-lg text-2xl text-primary" data-i18n="importantAccessories"
+            >Важливі аксесуари</h3
+          >
+          <div
+            class="liquid-glass p-5 rounded-2xl flex items-center gap-4 border-l-4 border-secondary"
+          >
+            <span class="material-symbols-outlined text-secondary text-3xl shrink-0"
+              >shopping_bag</span
+            >
+            <div>
+              <h4 class="font-label-bold text-base text-primary mb-1" data-i18n="dryBag"
+                >Гермомішок</h4
+              >
+              <p
+                class="text-on-surface-variant leading-relaxed text-xs"
+                data-i18n="dryBagDesc"
+                >Водонепроникна сумка для телефону та цінних речей. Входить у вартість від 2-х
+                годин оренди.</p
+              >
+            </div>
+          </div>
+          <div class="liquid-glass p-5 rounded-2xl flex items-center gap-4">
+            <span class="material-symbols-outlined text-secondary text-3xl shrink-0"
+              >cases</span
+            >
+            <div>
+              <h4 class="font-label-bold text-base text-primary mb-1" data-i18n="lockers"
+                >Комірки для зберігання</h4
+              >
+              <p
+                class="text-on-surface-variant leading-relaxed text-xs"
+                data-i18n="lockersDesc"
+                >Безпечне місце для вашого одягу та взуття під час плавання.</p
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

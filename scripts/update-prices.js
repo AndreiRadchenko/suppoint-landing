@@ -1,5 +1,5 @@
 /**
- * Fetches rental prices from Google Sheets and regenerates price.js
+ * Fetches rental prices from Google Sheets and regenerates src/js/price.js
  * Runs automatically on every build (prebuild) and can be run manually:
  *   node scripts/update-prices.js
  */
@@ -10,7 +10,7 @@ import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = resolve(__dirname, '..')
-const OUTPUT = resolve(ROOT, 'price.js')
+const OUTPUT = resolve(ROOT, 'src/js/price.js')
 
 const SHEET_ID = '1-IUP7OdeZGyxACiC_Uvc0nLtO7oJTsiANHOX8QtV3rQ'
 const GID = '0'
